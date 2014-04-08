@@ -3,80 +3,122 @@
 
 
 
-<script class="kxct" data-id="I3-1j0iA" data-timing="async" data-version="1.9" type="text/javascript">
-   window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
-   (function(){
-       var k=document.createElement('script');k.type='text/javascript';k.async=true;
-       var m,src=(m=location.href.match(/\bkxsrc=([^&]+)/))&&decodeURIComponent(m[1]);
-       k.src = /^https?:\/\/([^\/]+\.)?krxd\.net(:\d{1,5})?\//i.test(src) ? src : src === "disable" ? "" :
-       (location.protocol==="https:"?"https:":"http:")+"//cdn.krxd.net/controltag?confid=I3-1j0iA";
-       var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
-   }());
-</script> 
-
-<script type='text/javascript'>
-    var ROOT = '/';
-    var ROOT_ENV = 'production';  
-    
-    window.ENV  = ROOT_ENV;
-    window.ROOT = ROOT;
-    window.data  = window.data || {};
-    
-    window.data.ogImageSrc    = "http:\/\/www.canalvie.com\/img\/canalvie\/logo\/canalvie-280x230.jpg";
-    window.data.ogDescription = "Horaire des \u00E9missions, sections recettes, maison, famille, sant\u00E9-beaut\u00E9, couple, forums et webt\u00E9l\u00E9.";
-    window.data.reqJs         = "http:\/\/prod-front1.astral.atex.cniweb.net:8080\/cmlink\/CanalVie.d";
-    window.data.userActionTitle = "Canal Vie";
-    
-    getSiteId = function() { 
-        return "2.703";
+<script type="text/javascript" src="http://www.canalvie.com/js/canalvie/main/src/jquery.js" charset="utf-8"></script>
+<script>
+//Global enviroment. accepted values : production , development
+//change this to turn console messages on or off
+ 
+if (typeof ROOT_ENV != "undefined") {
+    window.ENV = ROOT_ENV || window.ENV || parent.window.ENV;
+} else if (!window.ENV) {
+    window.ENV = parent.window.ENV;
+}
+var ENV         = window.ENV || 'local';
+window.JSDIR    = 'js/canalvie';
+window.DEV_ROOT = '/canalvie2012/'; //this is the root for the dev server, do not include domain and protocol
+window.TESTDIR  = 'js/test';
+window.specsDIR = window.specsDIR || window.TESTDIR + '/ui/specs';
+window.mocksDIR = window.mocksDIR || window.TESTDIR + '/ui/mocks';
+ 
+/* ROOT And RequireJS Configuration
+ ----------------------------*/
+ 
+window.ABS_ROOT = 'http://www.canalvie.com/';
+ 
+var require = {
+    baseUrl: window.ABS_ROOT + window.JSDIR + '/main/src/',
+    deps: ["ns"],
+    paths: {
+        astral:       window.ABS_ROOT + 'js/astral/',
+        backend:      window.ABS_ROOT + 'js/astral/backend/',
+        ns:           window.ABS_ROOT + window.JSDIR + '/ns',  //NAMESPACE FILE FOR THE PROJECT
+        ui:           window.ABS_ROOT + window.JSDIR + '/main/src/',
+        Class:        window.ABS_ROOT + window.JSDIR + '/main/src/Class',
+        plugins:      window.ABS_ROOT + window.JSDIR + '/ui.plugins',
+        app:          window.ABS_ROOT + window.JSDIR + '/app/',
+        moment:       window.ABS_ROOT + window.JSDIR + '/app/weddingplanner/moment.min',
+        accounting:   window.ABS_ROOT + window.JSDIR + '/app/weddingplanner/accounting.min',
+        backendcv:    window.ABS_ROOT + window.JSDIR + '/backend.require',
+        membership:   window.ABS_ROOT + window.JSDIR + '/membership',
+        jquery:       window.ABS_ROOT + window.JSDIR + '/main/src/jquery',
+        test:         window.ABS_ROOT + window.TESTDIR,
+        Squire:       window.ABS_ROOT + window.TESTDIR + '/vendor/Squire',
+        specs:        window.ABS_ROOT + window.TESTDIR + window.specsDIR,
+        mocks:        window.ABS_ROOT + window.TESTDIR + window.mocksDIR
+    },
+    waitSeconds: 15,
+    "shim": {
+        "jquery.migrate": {
+            deps: ['jquery']
+        },
+        "jquery.cookie": {
+            deps: ['jquery'],
+            exports: '$.fn.cookie'
+        },
+        "jquery.chained": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.colorbox": {
+            deps: ['jquery'],
+            exports: '$.fn.colorbox'
+        },
+        "jquery.inFieldLabels":  {
+            deps: ['jquery'],
+            exports: '$.fn.inFieldLabels'
+        },
+        "jquery.joinInputs": {
+            deps: ['jquery'],
+            exports: '$.fn.beta'
+        },
+        "jquery.form": ['jquery'],
+        "jquery.tools": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.ui": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.easing": ['jquery'],
+        "jquery.validate": {
+            deps: ['jquery'],
+            exports: '$.validator'
+        },
+        "jquery.carouFredSel": {
+            deps: ['jquery'],
+            exports: '$.fn.carouFredSel'
+        },
+        "jquery.touchSwipe": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.hammer": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.roundabout": {
+            deps: ['jquery'],
+            exports: '$.fn.roundabout'
+        },
+        "jquery.transit": {
+            deps: ['jquery'],
+            exports: '$'
+        },
+        "jquery.placeholder": {
+            deps: ['jquery'],
+            exports: '$.fn.placeholder'
+        },
+        "swfobject": {
+            exports: 'swfobject'
+        },
+        "Class": {
+            exports: "Class"
+        }
     }
-    
-    var LOGIN_SUCCESS = "login.success";
-    var REGISTER_SUCCESS = "register.success";
-
-    var cookielessDomain = 'www.canalvie.com';
-
-    window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]); 
-    (function(){ 
-        function retrieve(n){ 
-            var m, k='kx'+n; 
-            if (window.localStorage) { 
-                return window.localStorage[k] || ""; 
-            } else if (navigator.cookieEnabled) { 
-                m = document.cookie.match(k+'=([^;]*)'); 
-                return (m && unescape(m[1])) || ""; 
-            } else { 
-                return ''; 
-            } 
-        } 
-        Krux.user = retrieve('user'); 
-        Krux.segments = retrieve('segs') && retrieve('segs').split(',') || []; 
-    })(); 
-
-    var gptadslots=[];
-    var googletag = googletag || {};
-    googletag.cmd = googletag.cmd || [];
-    (function(){ var gads = document.createElement('script');
-        gads.async = true; gads.type = 'text/javascript';
-        var useSSL = 'https:' == document.location.protocol;
-        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-        var node = document.getElementsByTagName('script')[0];
-        node.parentNode.insertBefore(gads, node);
-    })(); 
-    
-    googletag.cmd.push(function() {
-        googletag.pubads().enableSingleRequest();
-        googletag.pubads().collapseEmptyDivs();
-        
-        googletag.defineOutOfPageSlot('/3826/sri.canalvie/homepage', 'div-gpt-ad-oop').addService(googletag.pubads());
-       
-                                        
-                                 googletag.pubads().setTargeting("ksgmnt", Krux.segments);
-           googletag.pubads().setTargeting("u", Krux.user);
-            
-       googletag.pubads().enableAsyncRendering();
-       googletag.enableServices();
-    }); 
+};
+ 
+ 
 </script>
 
 
