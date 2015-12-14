@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Migration Brightcove Video JS / with ads</title>
+        <style>
+            .video-js {
+                height: 360px;
+                width: 640px;
+            }
+        </style>
+        <!-- Link to the ima3 plugin's css -->
+        <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+        <script src="/javascripts/require.js"></script>
+        <script src="/javascripts/config.js"></script>
+        <!-- <script async="" src="http://b.scorecardresearch.com/beacon.js"></script>-->
+    </head>
+
+    <body>
+
+
+    <div class="base-brightcovePlayer" data-module="videoPlayer" data-publisher-id="2221711260001" data-player-id="47a7f29d-7851-4d21-af6c-2ec7a2cd67bf"
+         data-player-options='
+
+    {"ad":{
+    "unitId": "/5479/sri.canald",
+    "zone": "webtele",
+    "userAge": "",
+    "adKey":  "showid%3D%26showname%3D",
+    "adEnabled": true
+    },
+    "content": {
+    "refId": "3a672015b3409ca98de2591b23846ed982c17a0e",
+    "videoType": "",
+    "autoStart": true,
+    "rating": "",
+    "showName": "",
+    "episode": ""
+    },
+    "playlist": [{"id":"D0000001_0001ABC","title":"K2000 Video S1 E1"},{"id":"D0000002_0002ABC","title":"K2000 Video S1 E2"},{"id":"DEMOOPRAg","title":"Top Gun Video S1 E1"},{"id":"sample3","title":"Top Gun Video S1 E5 long long long long long long long long long long long long long long lnog"},{"id":"sample4","title":"Top Gun Video S1 E5 long long long long long long long long long long long long long long lnog"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E5"},{"id":"sample5","title":"|*\u00ac\u00a4?|"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E3 - Title-with|*\u00ac\u00a4?|sp\u00e9\u00e7ials~ch4racter$"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E2 - extra long video title - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla nisl, ullamcorper vel elit quis."}],
+    "comscore": {
+    "streamSenseC2": "",
+    "videoMetrixC2": "",
+    "siteTag": ""
+    }
+    }
+'>
+        <div class="video-player">
+            </div>
+
+        <script>
+           require(['jquery', 'videoPlayer'],function($, VideoPlayer){
+                $("[data-module]").each(function () {
+                    var module = $(this).data("module");
+                    VideoPlayer.init($(this));
+
+                });
+            });
+        </script>
+        </div>
+    </body>
+</html>
