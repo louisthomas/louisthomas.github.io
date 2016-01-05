@@ -30,18 +30,24 @@ define(['jquery'], (function ($) {
             var bcModule = "//players.brightcove.net/" + publisherId + "/" + playerId + "_default/index.js";
             appendVideoTag(player, publisherId, playerId);
 
-            require([bcModule], function () {
-                require(['bc', 'video/video.manager', 'videojs.ima3'], function (BC, VideoManager) {
-                    VideoManager.init();
 
-                    videojs(videoPlayerId).ready(function () {
-                        player = this;
-                        player.plugin_configuration(options);
+            require(['video/conviva/Conviva_Videojs_2.94'], function(){
+                //Must have been initialized before any attempt at video playback. This is a one-time call.
+                Conviva.LivePass.init(options.conviva.customerKey);
+                //Conviva LivePass debugging messages are disabled by default
+                Conviva.LivePass.toggleTraces(true);
+                require([bcModule], function () {
+                    require(['bc', 'video/video.manager', 'videojs.ima3'], function (BC, VideoManager) {
+                        VideoManager.init();
+
+                        videojs(videoPlayerId).ready(function () {
+                            player = this;
+                            player.plugin_configuration(options);
+                        });
+
                     });
-
                 });
             });
-
         }
     }
 }));

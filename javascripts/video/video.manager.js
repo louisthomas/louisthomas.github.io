@@ -1,4 +1,4 @@
-define(['video/video.media','video/video.ads', 'video/video.comscore'], function(Media, Ads, Comscore) {
+define(['video/video.media','video/video.ads', 'video/video.comscore', 'video/video.conviva'], function(Media, Ads, Comscore, Conviva) {
 
     /*
      * This is the base plugin to control every aspect of the bcplayer
@@ -18,23 +18,7 @@ define(['video/video.media','video/video.ads', 'video/video.comscore'], function
                 // Init player object
                 var myPlayer = this;
                 console.log("video manager loaded");
-
-                /**
-                 * Initialisation of the base_bcplayer_playlist
-                 * This plugin manage the playlist of videos and the display of the next video title
-                 *
-                 * @param firstVideo    the default video to load into the player on ready
-                 * @param playlist      a list of other videos to play after the default one
-                 *                      (refID and title)
-                 **/
-
-
-                Media.init();
-
-                myPlayer.media_setup({
-                    'firstVideo': options.content.refId,
-                    'playlist': options.playlist
-                });
+                myPlayer.convivaPlugin(options);
 
                 /**
                  * Initialisation of the base_bcplayer_comscore
@@ -44,8 +28,7 @@ define(['video/video.media','video/video.ads', 'video/video.comscore'], function
                  *                  (siteTag, comscoreID, etc)
                  **/
 
-                Comscore.init();
-                myPlayer.comscore_setup(options.comscore);
+                //myPlayer.comscorePlugin(options.comscore);
 
                 /*
                  * Initialisation of the base_bcplayer_ads plugin
@@ -54,8 +37,14 @@ define(['video/video.media','video/video.ads', 'video/video.comscore'], function
                  * @param options   options needed by the plugin
                  */
 
-                Ads.init();
-                myPlayer.ads_setup({
+                myPlayer.adsPlugin({
+                    ima3: {
+                        requestMode: 'ondemand',
+                        timeout: 5000,
+                        prerollTimeout: 7000,
+                        debug: true,
+                        loadingSpinner: true
+                    },
                     'gptAdUnitId': options.ad.unitId,
                     'gptAdZone': options.ad.zone,
                     'gptAdKeys': options.ad.gptAdKeys,
@@ -72,7 +61,11 @@ define(['video/video.media','video/video.ads', 'video/video.comscore'], function
 
                 myPlayer.ima3.ready(function () {
                     console.log("Fired ima3 plugin!");
-                    this.media_setup.loadDefaultVideo(options.content.autoStart);
+                    this.mediaPlugin({
+                        'firstVideo': options.content.refId,
+                        'playlist': options.playlist,
+                        'autoStart': options.content.autoStart
+                    });
                 });
             });
         }
