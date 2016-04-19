@@ -4,7 +4,7 @@ if (typeof window.console == "undefined") {
 }
 
 require.config({
-    baseUrl: '/javascripts',
+    baseUrl: './javascripts',
     paths: {
         'jquery':           ['//code.jquery.com/jquery-1.11.3.min'],
         'streamsense':      ['http://ztele.com/js/astral/streamsense.min'],
