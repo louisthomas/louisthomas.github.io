@@ -1,7 +1,7 @@
 /* BrightcovePlayer Class
  * Namespace: astral.brightcovePlayer
  ---------------------------------------*/
-define(['jquery'], (function ($) {
+define(['jquery', 'require'], (function ($, require) {
     "use strict";
 
 
