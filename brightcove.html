@@ -1,28 +1,46 @@
 <!doctype html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Migration Brightcove Video JS / with ads</title>
-        <style>
-            .video-js {
-                height: 360px;
-                width: 640px;
-            }
-        </style>
-        <!-- Link to the ima3 plugin's css -->
-        <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
-        <script src="/javascripts/require.js"></script>
-        <script src="/javascripts/config.js"></script>
-        <script src="/javascripts/main-built.js"></script>
-        <!-- <script async="" src="http://b.scorecardresearch.com/beacon.js"></script>-->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Migration Brightcove Video JS / with ads</title>
+    <style>
+        .video-js {
+            height: 360px;
+            width: 640px;
+        }
+    </style>
+    <!-- Link to the ima3 plugin's css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script data-dojo-config="onReady:window.tdPlayerApiReady, async: 1, tlmSiblingOfDojo: 0, deps:['tdapi/run']" src="http://api.listenlive.co/tdplayerapi/2.6/dojo/dojo.js"></script>
 
-    <body>
+    <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+    <script src="/javascripts/require.js"></script>
+    <script src="/javascripts/config.js"></script>
+    <script src="/javascripts/main-built.js"></script>
+    <script src="/javascripts/modules/TritonPlayer.js"></script>
 
 
-    <div class="base-brightcovePlayer" data-module="videoPlayer" data-publisher-id="2221711260001" data-player-id="d78a927f-6979-4a01-bd4e-f476c2057f37"
-         data-player-options='
+    <!-- <script async="" src="http://b.scorecardresearch.com/beacon.js"></script>-->
+</head>
+
+<body>
+
+
+<!-- Player container -->
+<div id="td_container"></div>
+
+<!-- Now Playing information -->
+<h1>CuePoint</h1>
+<div id="cuePoint"></div>
+
+<h1>Now Playing</h1>
+<div id="nowPlaying"></div>
+
+
+
+<div class="base-brightcovePlayer" data-module="videoPlayer" data-publisher-id="2221711260001" data-player-id="d78a927f-6979-4a01-bd4e-f476c2057f37"
+     data-player-options='
 
     {"ad":{
     "unitId": "/5479/sri.canald",
@@ -49,19 +67,20 @@
     "customerKey": "7f2330ba2a840abea7033886f7908af9e2104ba8"
     }
     }
-'>
-        <div class="video-player">
-            </div>
+'/>
+<div class="video-player">
+</div>
 
-        <script>
-           require(['jquery', 'videoPlayer'],function($, VideoPlayer){
-                $("[data-module]").each(function () {
-                    var module = $(this).data("module");
-                    VideoPlayer.init($(this));
+<script>
+    require(['jquery', 'videoPlayer'],function($, VideoPlayer){
+        $("[data-module]").each(function () {
+            var module = $(this).data("module");
+            VideoPlayer.init($(this));
 
-                });
-            });
-        </script>
-        </div>
-    </body>
+        });
+    });
+</script>
+
+
+</body>
 </html>
