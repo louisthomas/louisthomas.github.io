@@ -2,11 +2,10 @@ var gulp = require('gulp');
 var shell = require('gulp-shell');
 
 
-gulp.task('default', function () {
-    return shell.task([
+gulp.task('default', shell.task([
         'r.js -o ./javascripts/build.js'
     ])
-});
+);
 
 gulp.task('webserver', function() {
     var webserver = require('gulp-webserver');
