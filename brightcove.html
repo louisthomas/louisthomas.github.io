@@ -12,13 +12,11 @@
     </style>
     <!-- Link to the ima3 plugin's css -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script data-dojo-config="onReady:window.tdPlayerApiReady, async: 1, tlmSiblingOfDojo: 0, deps:['tdapi/run']" src="http://api.listenlive.co/tdplayerapi/2.6/dojo/dojo.js"></script>
 
     <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
-    <script src="/javascripts/require.js"></script>
-    <script src="/javascripts/config.js"></script>
     <script src="/javascripts/main-built.js"></script>
     <script src="/javascripts/modules/TritonPlayer.js"></script>
+    <script data-dojo-config="onReady:window.tdPlayerApiReady, async: 1, tlmSiblingOfDojo: 0, deps:['tdapi/run']" src="http://api.listenlive.co/tdplayerapi/2.6/dojo/dojo.js"></script>
 
 
     <!-- <script async="" src="http://b.scorecardresearch.com/beacon.js"></script>-->
@@ -37,50 +35,8 @@
 <h1>Now Playing</h1>
 <div id="nowPlaying"></div>
 
-
-
-<div class="base-brightcovePlayer" data-module="videoPlayer" data-publisher-id="2221711260001" data-player-id="d78a927f-6979-4a01-bd4e-f476c2057f37"
-     data-player-options='
-
-    {"ad":{
-    "unitId": "/5479/sri.canald",
-    "zone": "webtele",
-    "userAge": "",
-    "adKey":  "showid%3D%26showname%3D",
-    "adEnabled": true
-    },
-    "content": {
-    "refId": "test123",
-    "videoType": "",
-    "autoStart": true,
-    "rating": "",
-    "showName": "",
-    "episode": ""
-    },
-    "playlist": [{"id":"D0000001_0001ABC","title":"K2000 Video S1 E1"},{"id":"D0000002_0002ABC","title":"K2000 Video S1 E2"},{"id":"DEMOOPRAg","title":"Top Gun Video S1 E1"},{"id":"sample3","title":"Top Gun Video S1 E5 long long long long long long long long long long long long long long lnog"},{"id":"sample4","title":"Top Gun Video S1 E5 long long long long long long long long long long long long long long lnog"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E5"},{"id":"sample5","title":"|*\u00ac\u00a4?|"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E3 - Title-with|*\u00ac\u00a4?|sp\u00e9\u00e7ials~ch4racter$"},{"id":"test_1386097491_10","title":"Top Gun Video S1 E2 - extra long video title - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla nisl, ullamcorper vel elit quis."}],
-    "comscore": {
-    "streamSenseC2": "",
-    "videoMetrixC2": "",
-    "siteTag": ""
-    },
-    "conviva":{
-    "customerKey": "7f2330ba2a840abea7033886f7908af9e2104ba8"
-    }
-    }
-'/>
-<div class="video-player">
-</div>
-
-<script>
-    require(['jquery', 'videoPlayer'],function($, VideoPlayer){
-        $("[data-module]").each(function () {
-            var module = $(this).data("module");
-            VideoPlayer.init($(this));
-
-        });
-    });
-</script>
-
+<div class="base-brightcovePlayer embed-responsive embed-responsive-16by9" data-publisher-id="28329379001" data-player-id="41m128hcl"
+     data-player-options="{&quot;content&quot;:{&quot;title&quot;:&quot;Les Manitobains se r&eacute;veillent dans une province conservatrice&quot;,&quot;episodeName&quot;:&quot;Les Manitobains se r&eacute;veillent dans une province conservatrice&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;refId&quot;:&quot;89a6b1f4272c023e84c000728269791e6a71c889&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;rating&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;,&quot;videoType&quot;:&quot;&quot;},&quot;conviva&quot;:{&quot;customerKey&quot;:&quot;7f2330ba2a840abea7033886f7908af9e2104ba8&quot;},&quot;player&quot;:{&quot;autoStart&quot;:true,&quot;ageRestricted&quot;:false,&quot;adEnabled&quot;:true},&quot;ad&quot;:{&quot;cmsid&quot;:&quot;3199&quot;,&quot;zone&quot;:&quot;videos&quot;,&quot;unitId&quot;:&quot;\/5479\/symp.fr.accueil&quot;,&quot;kruxConfigId&quot;:&quot;IjHl9_GF&quot;},&quot;playlist&quot;:{&quot;playlist&quot;:[{&quot;id&quot;:&quot;4d2507c928545a38b4bf96f6354ba318ff1c90ea&quot;,&quot;title&quot;:&quot;Jean-Samuel Andr&eacute;, humoriste&quot;,&quot;episodeName&quot;:&quot;Jean-Samuel Andr&eacute;, humoriste&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;2d4eee6d72a7081c67c013865435ef01ae02d933&quot;,&quot;title&quot;:&quot;Des milliers de dollars exig&eacute;s pour traiter les dossiers de r&eacute;fugi&eacute;s syriens&quot;,&quot;episodeName&quot;:&quot;Des milliers de dollars exig&eacute;s pour traiter les dossiers de r&eacute;fugi&eacute;s syriens&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;700693439a61d271e20d2ccd83185b30fedf741f&quot;,&quot;title&quot;:&quot;All&eacute;gations de sexisme sur la colline du Parlement&quot;,&quot;episodeName&quot;:&quot;All&eacute;gations de sexisme sur la colline du Parlement&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;89042789cf5f9dce7be0bcd7db06640a9002d5a8&quot;,&quot;title&quot;:&quot;Les enfants victimes d'abus et de trafic &agrave; la suite du s&eacute;isme au N&eacute;pal&quot;,&quot;episodeName&quot;:&quot;Les enfants victimes d'abus et de trafic &agrave; la suite du s&eacute;isme au N&eacute;pal&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;42104cc5c699d6eaf2b8b45aee558cf8448eaea1&quot;,&quot;title&quot;:&quot;Les lib&eacute;raux exigent des excuses pour les propos controvers&eacute;s d'une d&eacute;put&eacute;e p&eacute;quiste&quot;,&quot;episodeName&quot;:&quot;Les lib&eacute;raux exigent des excuses pour les propos controvers&eacute;s d'une d&eacute;put&eacute;e p&eacute;quiste&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;7b8cefb48368a09f00b6054ac59f9ff16e9299e5&quot;,&quot;title&quot;:&quot;D&eacute;noncer les agressions dans les transports en commun&quot;,&quot;episodeName&quot;:&quot;D&eacute;noncer les agressions dans les transports en commun&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;ec3e0df45eb3ef9e4c636ccaa8234acc9d2ba7d3&quot;,&quot;title&quot;:&quot;Le Airbnb de la voiture est arriv&eacute;&quot;,&quot;episodeName&quot;:&quot;Le Airbnb de la voiture est arriv&eacute;&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;81a44117d2c69a60b3605122c8c04ea8a087f5ff&quot;,&quot;title&quot;:&quot;Le monde en bref&quot;,&quot;episodeName&quot;:&quot;Le monde en bref&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;},{&quot;id&quot;:&quot;8c167f418e0998822694c8934919dd64272a7635&quot;,&quot;title&quot;:&quot;Montr&eacute;al du futur&quot;,&quot;episodeName&quot;:&quot;Montr&eacute;al du futur&quot;,&quot;showName&quot;:&quot;&quot;,&quot;seriesName&quot;:&quot;&quot;,&quot;showId&quot;:&quot;&quot;,&quot;seasonNumber&quot;:&quot;&quot;,&quot;episodeNumber&quot;:&quot;&quot;}]},&quot;comscore&quot;:{&quot;streamSenseC2&quot;:&quot;16433042&quot;,&quot;siteTag&quot;:&quot;SYMPATICOFRVID&quot;,&quot;videoMetrixC2&quot;:&quot;3005664&quot;}}"></div>
 
 </body>
 </html>

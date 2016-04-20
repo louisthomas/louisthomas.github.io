@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 
 
 gulp.task('default', shell.task([
-        'r.js -o ./javascripts/build.js'
+        './r.js -o ./javascripts/build.js optimize=none generateSourceMaps=true'
     ])
 );
 

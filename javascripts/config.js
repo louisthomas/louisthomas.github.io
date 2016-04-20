@@ -8,7 +8,6 @@ require.config({
     paths: {
         'jquery':           ['//code.jquery.com/jquery-1.11.3.min'],
         'streamsense':      ['http://ztele.com/js/astral/streamsense.min'],
-        'ima3.sdk':         ['//imasdk.googleapis.com/js/sdkloader/ima3'],
         'videojs.ima3':     ['//players.brightcove.net/videojs-ima3/videojs.ima3.min'],
         'videoPlayer':      ['modules/videoPlayer'],
         'dojo':              ['//api.listenlive.co/tdplayerapi/2.8/dojo/dojo']
