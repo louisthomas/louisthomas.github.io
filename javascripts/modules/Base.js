@@ -4,7 +4,7 @@
  * @requires module:require
  * @requires module:lib/vendor/class
  */
-define(['jquery', 'require', '../lib/class'], function ($, require) {
+define(['jquery', 'require', 'lib/class'], function ($, require) {
     "use strict";
 
     /**
